@@ -26,35 +26,34 @@
 %----------------------------------------------------------------------------------------
 
 % article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,11pt]{article}
 
 %----------------------------------------------------------------------------------------
 %	PACKAGES
 %----------------------------------------------------------------------------------------
 \usepackage{url}
-\usepackage{parskip} 	
+\usepackage{parskip}
 
 \RequirePackage{color}
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.9]{geometry}
+\usepackage[top=1.1cm, bottom=1.1cm, left=1.2cm, right=1.2cm]{geometry}
 
 \usepackage{tabularx}
 \usepackage{enumitem}
 
-\newcolumntype{C}{>{\centering\arraybackslash}X} 
+\newcolumntype{C}{>{\centering\arraybackslash}X}
 
 \usepackage{supertabular}
-\usepackage{tabularx}
 \newlength{\fullcollw}
 \setlength{\fullcollw}{0.47\textwidth}
 
-\usepackage{titlesec}				
+\usepackage{titlesec}
 \usepackage{multicol}
 \usepackage{multirow}
 
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{10pt}{10pt}
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{5pt}{5pt}
 
 \usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
 
@@ -62,203 +61,177 @@
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
 \addbibresource{citations.bib}
-\setlength\bibitemsep{1em}
+\setlength\bibitemsep{0.4em}
 
 \usepackage{fontawesome5}
+
+\setlength{\parskip}{0pt}
 
 %----------------------------------------------------------------------------------------
 %	BEGIN DOCUMENT
 %----------------------------------------------------------------------------------------
 \begin{document}
-
-\pagestyle{empty} 
+\pagestyle{empty}
 
 %----------------------------------------------------------------------------------------
 %	TITLE
 %----------------------------------------------------------------------------------------
-
 \begin{tabularx}{\linewidth}{@{} C @{}}
 \Huge{Pierre BELAMRI} \\[2pt]
-\href{https://github.com/Rxzh}{\raisebox{-0.05\height}\faGithub\ Rxzh} \ $|$ \ 
-\href{https://linkedin.com/in/pierre-r-belamri-4a8484191}{\raisebox{-0.05\height}\faLinkedin\ Pierre Belamri} \ $|$ \ 
+\small{
+\href{https://github.com/Rxzh}{\raisebox{-0.05\height}\faGithub\ Rxzh} \ $|$ \
+\href{https://linkedin.com/in/pierre-r-belamri-4a8484191}{\raisebox{-0.05\height}\faLinkedin\ Pierre Belamri} \ $|$ \
 \href{https://pbelamri.com}{\raisebox{-0.05\height}\faGlobe\ pbelamri.com} \ $|$ \
-\href{https://scholar.google.com/citations?user=pierre-belamri}{\raisebox{-0.05\height}\faGraduationCap\ Google Scholar} \ $|$ \ 
-\href{mailto:pierre.belamri@protonmail.com}{\raisebox{-0.05\height}\faEnvelope\ pierre.belamri@protonmail.com} \ $|$ \ 
-\href{tel:+33750934949}{\raisebox{-0.05\height}\faMobile\ +33.7.50.93.49.49} 
+\href{https://scholar.google.com/citations?user=8xd25vsAAAAJ&hl=en&oi=ao}{\raisebox{-0.05\height}\faGraduationCap\ Google Scholar} \ $|$ \
+\href{mailto:pierre.belamri@protonmail.com}{\raisebox{-0.05\height}\faEnvelope\ pierre.belamri@protonmail.com} \ $|$ \
+\href{tel:+33750934949}{\raisebox{-0.05\height}\faMobile\ +33.7.50.93.49.49}
+}
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	SUMMARY
 %----------------------------------------------------------------------------------------
-
+\vspace{-2pt}
 \section{Summary}
-PhD candidate (graduating 2026) at Mines Paris -- PSL University and CNRS, specializing in \textbf{self-supervised and multimodal machine learning} for scientific data. My research focuses on learning structured latent representations of microstructure and mechanical testing data (EBSD, nanoindentation, acoustic emission) to detect anomalies and infer crystal elastoplasticity properties at the sub-grain level. I run an AI-based OSINT SaaS company (VH Systems) serving Fortune 500 clients, and I am independently exploring long-horizon video prediction with V-JEPA. All research code and datasets are open-sourced.
+\vspace{1pt}
+{\small PhD candidate (graduating 2026) at Mines Paris -- PSL / CNRS, specializing in \textbf{self-supervised and multimodal machine learning} for scientific data. Research focuses on latent representation learning over microstructure and mechanical testing data (EBSD, nanoindentation, acoustic emission) for sub-grain elastoplasticity inference. Visiting researcher at UIUC and UCSB. Lecturer on Transformers at Mines Paris. Founder of an AI SaaS company (Fortune 500 clients). All research open-sourced.}
 
 %----------------------------------------------------------------------------------------
 %	EXPERIENCE
 %----------------------------------------------------------------------------------------
-
 \section{Work Experience}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{PhD Researcher --- CNRS \& Mines Paris (PSL), Paris} & \hfill Jan 2024 -- Present \\[3pt]
-\multicolumn{2}{@{}X@{}}{
+\textbf{PhD Researcher --- CNRS \& Mines Paris (PSL), Paris} & \hfill Jan 2024 -- Present \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small
 \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--] \textbf{Thesis:} \textit{Machine learning for anomaly detection in nanoindentation to identify crystal elastoplasticity properties at the sub-grain level.} Supervised by D. Ryckelynck and D. Texier.
-        \item[--] Developed a self-supervised learning pipeline to build structured latent representations of high-dimensional microstructure data (EBSD orientation maps, P-h nanoindentation curves, acoustic emission waveforms).
-        \item[--] Designed a multimodal data registration pipeline coupling three physical modalities (EBSD, nanoindentation, acoustic emission) into a unified dataset of oxygen-enriched titanium samples; manuscript in preparation.
-        \item[--] Pre-trained a Quaternion-based Vision Transformer on 2M synthetic EBSD patches (128$\times$128$\times$4 pixels); published in \textit{Materials \& Design} (2025), first author.
-        \item[--] Presented research at \textbf{TMS AIM2025} specialty conference.
-        \item[--] All models and datasets open-sourced.
-        \item[--] Training infrastructure: Jean-Zay HPC cluster (IDRIS); largest single run on 8$\times$A100 and 4$\times$H100 GPUs.
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=1.5pt]
+        \item[--] \textbf{Thesis:} \textit{ML for anomaly detection in nanoindentation to identify crystal elastoplasticity at the sub-grain level.} Supervisors: D. Ryckelynck, D. Texier.
+        \item[--] Developed a self-supervised pipeline to learn structured latent representations of high-dimensional microstructure data (EBSD orientation maps, P-h curves, acoustic waveforms).
+        \item[--] Designed a multimodal data registration pipeline coupling EBSD, nanoindentation, and acoustic emission into a unified dataset (oxygen-enriched titanium); manuscript in preparation.
+        \item[--] Pre-trained a Quaternion Vision Transformer on 2M synthetic EBSD patches (128$\times$128$\times$4 px); \textbf{first-author}, \textit{Materials \& Design} (2025). Presented at \textbf{TMS AIM2025}.
+        \item[--] Jean-Zay HPC (IDRIS); largest runs: 8$\times$A100 and 4$\times$H100. All code and datasets open-sourced.
     \end{itemize}
     \end{minipage}
-    } 
+    }
 \end{tabularx}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Lecturer --- École des Mines, Paris} & \hfill 2024 -- Present \\[3pt]
-\multicolumn{2}{@{}X@{}}{
+\textbf{Visiting PhD Student --- University of Illinois Urbana-Champaign (UIUC)} & \hfill Oct 2025 -- Nov 2025 \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small
 \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--] Teaching the \textbf{Transformers} course to MSc engineering students at one of France's top \textit{Grandes Écoles}: architecture, attention mechanisms, pre-training, and fine-tuning.
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=1.5pt]
+        \item[--] Visiting scholarship in the group of Prof.\ J.-C.\ Stinville (Materials Science \& Engineering).
+        \item[--] \textbf{2nd place / 77 international teams} + \textbf{Polaron Sponsor Prize}, 2025 AI/ML for Microscopy Hackathon: developed an ML pipeline for automated EBSD acquisition directing spatial sampling toward out-of-distribution regions via a Mahalanobis-distance latent-space prior, significantly reducing electron beam exposure. \href{https://kaliningroup.github.io/mic_hackathon_2/submissions/}{Submission}
     \end{itemize}
     \end{minipage}
-    } 
+    }
 \end{tabularx}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Founder --- VH Systems, Paris} & \hfill May 2024 -- Present \\[3pt]
-\multicolumn{2}{@{}X@{}}{
+\textbf{Visiting PhD Student --- UC Santa Barbara (UCSB)} & \hfill May 2025 -- Jun 2025 \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small
 \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--] Built and commercialized \textbf{EngageAI}, an AI-powered OSINT stakeholder intelligence platform for pharmaceutical and telecommunications companies, powered by web search agents hosted on GCP with a ReactJS front-end.
-        \item[--] 4 active clients including 3 Fortune 500 companies. Fully bootstrapped.
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=1.5pt]
+        \item[--] Visiting scholarship in the group of Prof.\ Sam Daly (Mechanical Engineering).
+        \item[--] Integrated acoustic emission sensing into micro-mechanical testing frameworks; engineered latent features from AE waveforms for multimodal ML architectures.
+        \item[--] Facilitated strategic alignment for a joint initiative between Mines Paris, UCSB, NASA, and Synchrotron SOLEIL on advanced material characterization.
     \end{itemize}
     \end{minipage}
-    } 
+    }
 \end{tabularx}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Machine Learning Consultant --- University of Zurich} & \hfill Apr 2024 -- Jun 2025 \\[3pt]
-\multicolumn{2}{@{}X@{}}{
-\begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--] Fine-tuned a representation head on top of \textbf{NV-Embed-v2} (NVIDIA's large text embedding model) on a custom dataset of 2024 US election text I collected and curated. Trained on a single A100.
-        \item[--] Modeled the political latent space with no a priori labels; the resulting embeddings exhibited spontaneous separation along the political compass, validating the unsupervised structure learning approach.
-        \item[--] Set up multi-GPU distributed training infrastructure; advised on hyperparameter tuning and data preprocessing for political science researchers.
-    \end{itemize}
-    \end{minipage}
-    } 
+\textbf{Lecturer --- Mines Paris -- PSL, Paris} & \hfill 2024 -- Present \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small Teaching the \textbf{Transformers} course to MSc engineering students: architecture, attention mechanisms, pre-training, and fine-tuning.}
 \end{tabularx}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{ML Engineer --- Consultys, Lausanne} & \hfill Mar 2023 -- Nov 2023 \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{
-\begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--] Implemented and deployed several open-source LLMs on client cloud instances using Docker (front-end, back-end, serving). Produced a modular multitask conversational agent for Research Scientists built on task-specific smaller language models.
-        \item[--] Master's thesis focused on state-of-the-art \textbf{LLM quantization} techniques (GPTQ and variants); mathematical formulation published on personal blog.
-    \end{itemize}
-    \end{minipage}
-    } 
+\textbf{Founder --- VH Systems / EngageAI, Paris} & \hfill May 2024 -- Present \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small Built and commercialized \textbf{EngageAI}, an AI-powered OSINT stakeholder intelligence platform (web search agents, GCP, ReactJS). 4 active clients including 3 Fortune 500 companies. Fully bootstrapped.}
 \end{tabularx}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{ML Intern (Business Intelligence) --- Amazon, Berlin} & \hfill Mar 2022 -- Jul 2022 \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{
+\textbf{Machine Learning Consultant --- University of Zurich} & \hfill Apr 2024 -- Jun 2025 \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small
 \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--] Trained a competitor-monitoring NLP classifier to split and classify competitor job postings at scale.
-        \item[--] Deployed end-to-end on AWS using Infrastructure-as-Code (CDK): Docker image builder, notification service, full ETL pipeline; cost-efficient inference on ARM processors.
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=1.5pt]
+        \item[--] Fine-tuned a representation head on \textbf{NV-Embed-v2} on a self-curated 2024 US election corpus; the latent space exhibited spontaneous separation along the political compass with no a priori labels.
+        \item[--] Set up multi-GPU training infrastructure; advised on hyperparameter tuning and data preprocessing for political science researchers.
     \end{itemize}
     \end{minipage}
-    } 
+    }
 \end{tabularx}
 
-%\begin{tabularx}{\linewidth}{ @{}l r@{} }
-%\textbf{NLP \& OSINT Intern --- Philip Morris International, Lausanne} & \hfill Sep 2021 -- Feb 2022 \\[3pt]
-%\multicolumn{2}{@{}X@{}}{
-%\begin{minipage}[t]{\linewidth}
-%    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-%        \item[--] Built AI-based scrapers (Selenium on Tor) to autonomously browse illicit trading platforms for tobacco contraband intelligence.
-%        \item[--] Delivered insights via graph network analysis, social media and dark web monitoring for illicit trade prevention.
-%    \end{itemize}
-%    \end{minipage}} 
-%\end{tabularx}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{ML Engineer --- Consultys, Lausanne} & \hfill Mar 2023 -- Nov 2023 \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small Deployed open-source LLMs on client cloud instances (Docker). Built a modular multitask conversational agent for Research Scientists. Master's thesis on \textbf{LLM quantization} (GPTQ and variants).}
+\end{tabularx}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Research Intern --- CAOR Mines Paris, Paris} & \hfill Mar 2021 -- Apr 2021 \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{
-\begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--] Combined Computer Vision and Deep Reinforcement Learning for end-to-end robot arm manipulation. Achieved \textbf{98.3\% success rate} in under 30k training epochs. \href{https://arxiv.org/pdf/2105.09719.pdf}{Preprint}
-    \end{itemize}
-    \end{minipage}
-}
+\textbf{ML Intern (BI) --- Amazon, Berlin} & \hfill Mar 2022 -- Jul 2022 \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small Trained a competitor job-posting NLP classifier; deployed end-to-end on AWS (CDK, Docker, ETL) with cost-efficient ARM inference.}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Softaware Engineering \& OSINT Intern --- Philip Morris International, Lausanne} & \hfill Sep 2021 -- Feb 2022 \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small Selenium scrapers on Tor for illicit trade monitoring; graph network and dark web intelligence for tobacco contraband prevention.}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Research Intern --- CAOR Mines Paris, Paris} & \hfill Mar 2021 -- Apr 2021 \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small CV + Deep RL for robot arm manipulation: \textbf{98.3\% success rate} in under 30k training epochs. \href{https://arxiv.org/pdf/2105.09719.pdf}{Preprint.}}
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	PROJECTS
 %----------------------------------------------------------------------------------------
-
 \section{Projects}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{CRAFT-JEPA} (independent research) & \hfill \href{https://github.com/Rxzh/craft-jepa}{GitHub} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Fine-tuning \textbf{V-JEPA} on the VPT dataset (4.5TB of Minecraft gameplay + keyboard/mouse controls) to evaluate long-horizon planning capabilities of a JEPA-style world model in a stochastic environment. First training run converged; currently running validation to guide architecture modifications. Training performed on 4$\times$H100 GPUs; compute self-funded.} \\[6pt]
-
-\textbf{Adaptive EBSD Beam Control via Latent Space Mapping} & \hfill \href{https://kaliningroup.github.io/mic_hackathon_2/submissions/}{Submission} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{2nd place (out of 70 teams) and \textbf{Polaron Sponsor Prize} at the MIC Hackathon (UIUC, 2-day). Applied Mahalanobis distance anomaly detection in the latent space of a Kikuchi-pattern autoencoder to autonomously focus electron beam acquisition on high-information-density microstructural regions, dramatically accelerating EBSD map acquisition. Collaboration with Mathieu Calvat and J.-C. Stinville (UIUC).} \\[6pt]
-
-\textbf{Master's Thesis: Quantization of Language Models} & \hfill \href{https://pbelamri.com/projects_posts/quantization1/2022-12-25-quantization/}{Blog post} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Demonstrated and implemented SOTA quantization techniques (GPTQ and variants) for LLMs during internship at Consultys. Mathematical formulation and experimental results published openly.} \\
+\textbf{CRAFT-JEPA} (independent research) & \hfill \href{https://github.com/Rxzh/craft-jepa}{GitHub} \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small Fine-tuning \textbf{V-JEPA} on the VPT dataset (4.5 TB Minecraft gameplay + controls) to probe long-horizon planning in a stochastic environment. First run converged; architecture evaluation in progress. Trained on 4$\times$H100 (self-funded).}
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
-
 \section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2024 -- 2026 & \textbf{PhD} in Applied Machine Learning for Materials Science, \textbf{Mines Paris -- PSL} / CNRS \\
-2019 -- 2023 & \textbf{MSc \& Diplôme d'Ingénieur} (Executive Engineering), \textbf{Mines Paris -- PSL} \\
-2017 -- 2019 & Classes préparatoires (MPSI/MP*), \textbf{Lycée Marcel Sembat} \\
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+2024 -- 2026 & \textbf{PhD} in Applied Machine Learning for Materials Science --- \textbf{Mines Paris -- PSL} / CNRS \\[-2pt]
+2019 -- 2023 & \textbf{MSc \& Diplôme d'Ingénieur} (Executive Engineering) --- \textbf{Mines Paris -- PSL} \\[-2pt]
+2017 -- 2019 & Classes préparatoires (MPSI/MP*) --- \textbf{Lycée Marcel Sembat} \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
-
 \section{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Research &  \small{Self-supervised learning, multimodal representation learning, anomaly detection, transformers, CNNs, RL, model quantization, NLP} \\[3pt]
-ML Frameworks & \small{PyTorch, TensorFlow, HuggingFace, scikit-learn} \\[3pt]
-Infrastructure & \small{SLURM / HPC (Jean-Zay), multi-GPU distributed training (8$\times$A100, 4$\times$H100), AWS (CDK, EC2, S3), GCP, Docker} \\[3pt]
-Engineering & \small{Python, JavaScript/ReactJS, SQL, C\#/Unity} \\[3pt]
-Languages & \small{French (native), English (fluent)} \\
+Research        & \small{Self-supervised learning, multimodal representation learning, anomaly detection, transformers, CNNs, RL, LLM quantization, NLP} \\[-2pt]
+ML Stack        & \small{PyTorch, TensorFlow, HuggingFace, scikit-learn $|$ SLURM/HPC (Jean-Zay), distributed training (8$\times$A100, 4$\times$H100), AWS, GCP, Docker} \\[-2pt]
+Engineering     & \small{Python, JavaScript/ReactJS, SQL, C\#/Unity} \\[-2pt]
+Languages       & \small{French (native), English (fluent)} \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
-%	EXTRACURRICULAR
+%	ACHIEVEMENTS
 %----------------------------------------------------------------------------------------
-
 \section{Achievements}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Competitive Gaming & \small{Global rank \textbf{14th} in competitive Minecraft PvP (Kohi server, 2016); core member of \textit{VorHerr}, the world's top-ranked PvP team at the time.} \\
+Competitive Gaming & \small{Global rank \textbf{14th} in competitive Minecraft PvP (Kohi, 2016); core member of \textit{VorHerr}, ranked world \#1 PvP team at the time.} \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	PUBLICATIONS
 %----------------------------------------------------------------------------------------
-
 \section{Publications}
 \begin{refsection}[citations.bib]
 \nocite{*}
 \printbibliography[heading=none]
 \end{refsection}
 
+\vspace{2pt}
 \center{\footnotesize Last updated: \today}
 
 \end{document}
