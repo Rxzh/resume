@@ -1,0 +1,239 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,11pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip}
+
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[top=1.1cm, bottom=1.1cm, left=1.2cm, right=1.2cm]{geometry}
+
+\usepackage{tabularx}
+\usepackage{enumitem}
+
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+\usepackage{supertabular}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{multirow}
+
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{5pt}{5pt}
+
+\usepackage[french]{babel}
+\usepackage{csquotes}
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{0.4em}
+
+\usepackage{fontawesome5}
+
+\setlength{\parskip}{0pt}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+\pagestyle{empty}
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Pierre BELAMRI} \\[2pt]
+\small{
+\href{https://github.com/Rxzh}{\raisebox{-0.05\height}\faGithub\ Rxzh} \ $|$ \
+\href{https://linkedin.com/in/pierre-r-belamri-4a8484191}{\raisebox{-0.05\height}\faLinkedin\ Pierre Belamri} \ $|$ \
+\href{https://pbelamri.com}{\raisebox{-0.05\height}\faGlobe\ pbelamri.com} \ $|$ \
+\href{https://scholar.google.com/citations?user=8xd25vsAAAAJ&hl=en&oi=ao}{\raisebox{-0.05\height}\faGraduationCap\ Google Scholar} \ $|$ \
+\href{mailto:pierre.belamri@protonmail.com}{\raisebox{-0.05\height}\faEnvelope\ pierre.belamri@protonmail.com} \ $|$ \
+\href{tel:+33750934949}{\raisebox{-0.05\height}\faMobile\ +33.7.50.93.49.49}
+}
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	SUMMARY
+%----------------------------------------------------------------------------------------
+\vspace{-2pt}
+\section{Profil}
+\vspace{1pt}
+{\small Doctorant (soutenance en 2026) à Mines Paris -- PSL / CNRS, spécialisé en \textbf{self-supervised et multimodal machine learning} appliqué aux données scientifiques. Mes travaux portent sur l'apprentissage de représentations latentes à partir de données de microstructure et d'essais mécaniques (EBSD, nanoindentation, émission acoustique) pour l'inférence de l'élastoplasticité à l'échelle sub-granulaire. Chercheur invité à UIUC et UCSB. Chargé de cours sur les Transformers à Mines Paris. Fondateur d'une société SaaS d'IA (clients Fortune 500).}
+
+%----------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+\section{Expérience professionnelle}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Étudiant doctorant --- CNRS \& Mines Paris (PSL), Paris} & \hfill janv. 2024 -- aujourd'hui \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=1.5pt]
+        \item[--] \textbf{Thèse :} \textit{Machine learning pour la détection d'anomalies en nanoindentation afin d'identifier l'élastoplasticité cristalline à l'échelle sub-granulaire.} Encadrants : D. Ryckelynck, D. Texier.
+        \item[--] Développement d'un pipeline self-supervised pour apprendre des représentations latentes structurées de données de microstructure en haute dimension (cartes d'orientation EBSD, courbes P-h, signaux acoustiques).
+        \item[--] Conception d'un pipeline de recalage multimodal couplant EBSD, nanoindentation et émission acoustique en un jeu de données unifié (titane enrichi en oxygène) ; article en préparation.
+        \item[--] Pré-entraînement d'un Quaternion Vision Transformer sur 2M de patchs EBSD synthétiques (128$\times$128$\times$4 px) ; \textbf{premier auteur}, \textit{Materials \& Design} (2025). Présenté à \textbf{TMS AIM2025}.
+        \item[--] HPC Jean-Zay (IDRIS) ; plus gros entraînements : 8$\times$A100 et 4$\times$H100. Code et jeux de données entièrement open source.
+    \end{itemize}
+    \end{minipage}
+    }
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Étudiant doctorant invité --- University of Illinois Urbana-Champaign (UIUC)} & \hfill oct. 2025 -- nov. 2025 \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=1.5pt]
+        \item[--] Séjour de recherche dans le groupe du Prof.\ J.-C.\ Stinville (Materials Science \& Engineering).
+        \item[--] \textbf{2\textsuperscript{e} place / 77 équipes internationales} + \textbf{Polaron Sponsor Prize}, 2025 AI/ML for Microscopy Hackathon : développement d'un pipeline ML d'acquisition EBSD automatisée, orientant l'échantillonnage spatial vers les régions out-of-distribution via un prior sur l'espace latent basé sur la distance de Mahalanobis, réduisant fortement l'exposition au faisceau d'électrons. \href{https://kaliningroup.github.io/mic_hackathon_2/submissions/}{Soumission}
+    \end{itemize}
+    \end{minipage}
+    }
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Étudiant doctorant invité --- UC Santa Barbara (UCSB)} & \hfill mai 2025 -- juin 2025 \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=1.5pt]
+        \item[--] Séjour de recherche dans le groupe du Prof.\ Sam Daly (Mechanical Engineering).
+        \item[--] Intégration de l'émission acoustique dans des dispositifs d'essais micro-mécaniques ; extraction de features latentes à partir des signaux d'EA pour des architectures ML multimodales.
+        \item[--] Coordination stratégique d'une initiative commune entre Mines Paris, UCSB, la NASA et le Synchrotron SOLEIL sur la caractérisation avancée des matériaux.
+    \end{itemize}
+    \end{minipage}
+    }
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Chargé de cours --- Mines Paris -- PSL, Paris} & \hfill 2024 -- aujourd'hui \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small Enseignement du cours \textbf{Transformers} aux élèves ingénieurs (niveau MSc) : architecture, mécanismes d'attention, pré-entraînement et fine-tuning.}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Fondateur --- VH Systems / EngageAI, Paris} & \hfill mai 2024 -- aujourd'hui \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small Conception et commercialisation d'\textbf{EngageAI}, une plateforme d'intelligence OSINT sur les parties prenantes, basée sur l'IA (agents de recherche web, GCP, ReactJS). 4 clients actifs dont 3 entreprises du Fortune 500 (sciences de la vie, pharma, télécommunications). Entièrement autofinancée.}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Consultant en Machine Learning --- Université de Zurich} & \hfill avr. 2024 -- juin 2025 \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=1.5pt]
+        \item[--] Fine-tuning d'une tête de représentation sur \textbf{NV-Embed-v2} à partir d'un corpus constitué sur l'élection présidentielle américaine de 2024 ; l'espace latent s'organise spontanément selon le compas politique, sans aucune étiquette a priori.
+        \item[--] Mise en place d'une infrastructure d'entraînement multi-GPU ; conseil sur le réglage des hyperparamètres et le prétraitement des données auprès de chercheurs en science politique.
+    \end{itemize}
+    \end{minipage}
+    }
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Ingénieur ML --- Consultys, Lausanne} & \hfill mars 2023 -- nov. 2023 \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small Déploiement de LLMs open source sur les instances cloud des clients (Docker). Développement d'un agent conversationnel multitâche et modulaire pour des Research Scientists. Mémoire de master sur la \textbf{quantization de LLMs} (GPTQ et variantes).}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Stagiaire ML (BI) --- Amazon, Berlin} & \hfill mars 2022 -- juil. 2022 \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small Entraînement d'un classifieur NLP d'offres d'emploi concurrentes ; déploiement de bout en bout sur AWS (CDK, Docker, ETL) avec une inférence ARM optimisée en coût.}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Ingénieur logiciel stagiaire --- PMI, Lausanne} & \hfill sept. 2021 -- févr. 2022 \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small Scrapers Selenium sur Tor pour la surveillance du commerce illicite ; analyse de graphes et renseignement sur le dark web pour la lutte contre la contrebande de tabac.}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Stagiaire de recherche --- CAOR Mines Paris, Paris} & \hfill mars 2021 -- avr. 2021 \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small Computer vision + Deep RL pour la manipulation par bras robotique : \textbf{98,3\,\% de réussite} en moins de 30k epochs d'entraînement. \href{https://arxiv.org/pdf/2105.09719.pdf}{Preprint.}}
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PROJECTS
+%----------------------------------------------------------------------------------------
+\section{Projets}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{CRAFT-JEPA} (recherche indépendante) & \hfill \href{https://github.com/Rxzh/craft-jepa}{GitHub} \\[2pt]
+\multicolumn{2}{@{}X@{}}{\small Fine-tuning de \textbf{V-JEPA} sur le dataset VPT (4,5 To de parties de Minecraft + commandes) pour étudier la planification à long horizon en environnement stochastique. Premier entraînement convergé ; évaluation de l'architecture en cours. Entraîné sur 4$\times$H100 (autofinancé).}
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Formation}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+2024 -- 2026 & \textbf{Doctorat (PhD)} en Machine Learning appliqué à la science des matériaux --- \textbf{Mines Paris -- PSL} / CNRS \\[-2pt]
+2019 -- 2023 & \textbf{Diplôme d'Ingénieur \& MSc} (Ingénieur civil -- Executive Engineering) --- \textbf{Mines Paris -- PSL} \\[-2pt]
+2017 -- 2019 & Classes préparatoires --- \textbf{Lycée Marcel Sembat} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Compétences}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Recherche       & \small{Self-supervised learning, multimodal representation learning, détection d'anomalies, transformers, CNNs, RL, LLM quantization, NLP} \\[-2pt]
+ML Stack        & \small{PyTorch, TensorFlow, HuggingFace, scikit-learn $|$ SLURM/HPC (Jean-Zay), entraînement distribué (8$\times$A100, 4$\times$H100), AWS, GCP, Docker} \\[-2pt]
+Ingénierie      & \small{Python, JavaScript/ReactJS, SQL, C\#/Unity} \\[-2pt]
+Langues         & \small{Français (langue maternelle), anglais (courant)} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	ACHIEVEMENTS
+%----------------------------------------------------------------------------------------
+\section{Distinctions}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Gaming compétitif & \small{Classé \textbf{14\textsuperscript{e} mondial} en Minecraft PvP compétitif (Kohi, 2016) ; membre clé de \textit{VorHerr}, alors équipe PvP n\textsuperscript{o}\,1 mondiale.} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+\section{Publications}
+\begin{refsection}[citations.bib]
+\nocite{*}
+\printbibliography[heading=none]
+\end{refsection}
+
+\vspace{2pt}
+\center{\footnotesize Dernière mise à jour : \today}
+
+\end{document}
